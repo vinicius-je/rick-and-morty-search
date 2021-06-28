@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --black: #24282F
+}
+
+html{
+    background-color: var(--black);
+}
+
+input, button{
+    outline: none;
+    border: none;
+}
+
+.container{
+    font-family: 'Lilita One', cursive;
+}
+
+.main{
+    background-image: url("./assets/main-bg.png");
+    background-color: white;
+    background-position: center;
+    height: 260px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.title{
+    font-size: 2.8rem;
+    color: var(--black);
+}
+
+.input{
+    width: 400px;
+    height: 40px;
+    background-color: brown;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.input input{
+    width: 90%;
+    height: 100%;
+    padding: 0 5px;
+}
+
+.input button{
+    width: 12%;
+    background-color: var(--black);
+    color: white;
+}
+
+.random-btn{
+    background-color: var(--black);
+    font-family: 'Lilita One', cursive;
+    color: white;
+    font-size: 1.25rem;
+    padding: 10px 0;
+    width: 130px;
+    border-radius: 5px;
+}
+
+.wrapper-cards{
+    padding: 30px 0;
+}
+
+.display{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.card{
+    max-width: 290px;
+    background-color: #4C4D4E;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.img-box{
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.img-box img{
+    width: 100%;
+    height: 100%;
+}
+
+.info-box{
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin-top: 20px;
+}
+
+span{
+    color: #01EC35;
+}
+
+p{
+    font-weight: lighter;
+    font-style: italic;
+}
