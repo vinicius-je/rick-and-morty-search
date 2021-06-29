@@ -51,12 +51,22 @@ input, button{
     width: 90%;
     height: 100%;
     padding: 0 5px;
+    font-size: 1rem;
 }
 
 .input button{
     width: 12%;
     background-color: var(--black);
     color: white;
+}
+
+.input button:hover{
+    color: orange;
+    cursor: pointer;
+}
+
+.fa-search{
+    font-size: 1rem;
 }
 
 .random-btn{
@@ -67,6 +77,14 @@ input, button{
     padding: 10px 0;
     width: 130px;
     border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+}
+
+.random-btn:hover{
+    color: orange;
 }
 
 .wrapper-cards{
@@ -81,7 +99,7 @@ input, button{
 
 .card{
     max-width: 290px;
-    background-color: #4C4D4E;
+    background-color: #3C3E44;
     padding: 20px;
     border-radius: 8px;
 }
@@ -107,11 +125,19 @@ input, button{
     margin-top: 20px;
 }
 
-span{
-    color: #01EC35;
+.info-box p{
+    font-weight: lighter;
+    color: rgb(223, 219, 219);
 }
 
-p{
-    font-weight: lighter;
-    font-style: italic;
+.live{
+    color: #01EC35;
 }
+.dead{
+    color:  #FC1F1F;
+}
+.unknow{
+    color: #9b9999;
+}
+
+
