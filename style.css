@@ -94,6 +94,7 @@ input, button{
     justify-content: space-evenly;
     width: 80%;
     margin: auto;
+    margin-bottom: 50px;
 }
 
 .card{
@@ -139,5 +140,11 @@ input, button{
 .unknow{
     color: #9b9999;
 }
+
+        @media screen and (max-width: 450px){
+            .input{
+                width: 280px;
+            }
+        }
 
 
