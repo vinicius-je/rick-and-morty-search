@@ -1,21 +1,38 @@
 const URL_ID = 'https://rickandmortyapi.com/api/character/';
 const URL_NAME = 'https://rickandmortyapi.com/api/character/?name=';
-
+// global variables
 let card = "";
 let characters;
+let nextPage;
 
 let search_btn = document.querySelector(".search-btn");
-let random_btn = document.querySelector(".random-btn")
-let display = document.querySelector(".display");
+let random_btn = document.querySelector(".random-btn");
+let more_btn = document.querySelector(".more-btn")
+let wrapper_cards = document.querySelector(".wrapper-cards");
 
-async function filterByID(url, id, callback){
-    characters = await fetch(url + id)
+async function filterCharacters(url, type, callback){
+    characters = await fetch(url + type)
                 .then(res => res.json())
                 .catch(err => console.log(err))
-
-    callback(characters)
+    if(typeof(type) === "string"){
+        nextPage = nextCharactersPage(characters)
+    }else{
+        more_btn.classList.remove("display");
+    }
+    callback(characters);
 }
 
+// check for similar characters on other pages and configure the load more button display
+function nextCharactersPage(data){
+    if(data.info.next){
+        more_btn.classList.add("display");
+        return characters.info.next;
+    }else{
+        more_btn.classList.remove("display");
+        return null;
+    }
+}
+ 
 function arrayOfCharacters(data){
     for(let character of data.results){
         characterInfo(character)
@@ -35,7 +52,7 @@ function characterInfo(data){
                 </div>
             </div>`
     
-    display.innerHTML = card;
+    wrapper_cards.innerHTML = card;
 }
 
 function generateNumber(min, max){
@@ -44,13 +61,19 @@ function generateNumber(min, max){
 
 search_btn.addEventListener("click", ()=> {
     let name = document.querySelector(".search-input").value;
-    filterByID(URL_NAME, name, arrayOfCharacters);
+    filterCharacters(URL_NAME, name, arrayOfCharacters);
     card = "";
+    nextPage = "";
+    document.querySelector(".search-input").value = "";
 })
 
 random_btn.addEventListener("click", ()=> {
     let id_number = generateNumber(1, 671);
-    filterByID(URL_ID, id_number, characterInfo);
+    filterCharacters(URL_ID, id_number, characterInfo);
     card = "";
+})
+
+more_btn.addEventListener("click", () => {
+    filterCharacters(nextPage, "", arrayOfCharacters);
 })
 

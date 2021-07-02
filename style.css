@@ -17,6 +17,10 @@ input, button{
     border: none;
 }
 
+button{
+    cursor: pointer;
+}
+
 .container{
     font-family: 'Lilita One', cursive;
 }
@@ -62,7 +66,6 @@ input, button{
 
 .input button:hover{
     color: orange;
-    cursor: pointer;
 }
 
 .fa-search{
@@ -87,7 +90,12 @@ input, button{
     color: orange;
 }
 
-.display{
+section{
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.wrapper-cards{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -103,6 +111,7 @@ input, button{
     padding: 20px;
     border-radius: 8px;
     margin-top: 50px;
+    text-align: left;
 }
 
 .img-box{
@@ -129,6 +138,27 @@ input, button{
 .info-box p{
     font-weight: lighter;
     color: rgb(223, 219, 219);
+}
+
+.more-btn{
+    font-family: 'Lilita One', cursive;
+    font-size: 1rem;
+    padding: 10px 0;
+    width: 130px;
+    border-radius: 3px;
+    border: 2px solid white;
+    color: white;
+    background-color: var(--black);
+    display: none;
+}
+
+.more-btn:hover{
+    color: orange;
+    border-color: orange;
+}
+
+.display{
+    display: inline-block;
 }
 
 .live{
