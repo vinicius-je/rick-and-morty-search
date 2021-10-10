@@ -3,17 +3,23 @@
 ## Objetivo do projeto: 
 Realizar buscas conforme o nome do personagem inserido pelo usuário ou exibir um personagem aleatório atráves do botão destinado a tal função
 
+## Antevisão:
+![image](https://user-images.githubusercontent.com/67986109/136711815-29eca2a9-17c9-4613-b19b-2b382d5b0cee.png)
+
+**Você pode acessar o projeto nesse link: [rick and morty search](https://vinicius-je.github.io/rick-and-morty-search/)**
+
 ## Informações exibidas dos personagens:
 * Imagem
 * Nome
 * Espécie
 * Status
+* Gênero
 * Local
 
 ## Tópicos abordados:
 
 * Funções assíncronas (async/await)
-* Funções matemáticas
+* Gerar números aleátorios entre dois números
 * Callback
 * Requisição de informações por meio de uma API
 * Arrays
