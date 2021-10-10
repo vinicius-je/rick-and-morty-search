@@ -5,16 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link rel="icon" href="./assets/icon.png">
+    <!-- fronts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
     <title>Rick and Morty</title>
 </head>
 <body>
     <div class="container">
-        <div class="main">
+        <div class="main t-align-center">
             <div class="search">
                 <h1 class="title">Rick and Morty<br>Search</h1>
                 <div class="input">
@@ -24,21 +28,9 @@
                 <button class="random-btn">Random<i class="fas fa-random"></i></button>
             </div>
         </div>
-
-        <section>
-            <div class="wrapper-cards">
-                <!-- <div class="card">
-                    <div class="img-box">
-                        <img src="${data.image}" alt="Image of ${data.name}">
-                    </div>
-                    <div class="info-box">
-                        <p>Name: ${data.name}</p>
-                        <p>Species: ${data.species}</p>
-                        <p>Status: <span class=${data.status}>${data.status}<span></p>
-                        <p>Location: ${data.location}</p>
-                    </div>
-                </div> -->
-            </div>
+        <!-- cards section -->
+        <section class="t-align-center">
+            <div class="wrapper-cards"></div>
             <button class="more-btn">Load more</button>
         </section>
     </div>

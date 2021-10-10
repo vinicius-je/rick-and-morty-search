@@ -1,6 +1,6 @@
 const URL_ID = 'https://rickandmortyapi.com/api/character/';
 const URL_NAME = 'https://rickandmortyapi.com/api/character/?name=';
-// global variables
+
 let card = "";
 let characters;
 let nextPage;
@@ -10,19 +10,26 @@ let random_btn = document.querySelector(".random-btn");
 let more_btn = document.querySelector(".more-btn")
 let wrapper_cards = document.querySelector(".wrapper-cards");
 
+
 async function filterCharacters(url, type, callback){
     characters = await fetch(url + type)
                 .then(res => res.json())
-                .catch(err => console.log(err))
-    if(typeof(type) === "string"){
-        nextPage = nextCharactersPage(characters)
+                .catch(err => { console.log(err)})
+
+    if(characters.error == 'There is nothing here'){
+        alert(characters.error)
     }else{
-        more_btn.classList.remove("display");
+        //check if user enter with a character name 
+        if(typeof(type) === "string"){
+            nextPage = nextCharactersPage(characters)
+        }else{
+            more_btn.classList.remove("display");
+        }
+        callback(characters);
     }
-    callback(characters);
 }
 
-// check for similar characters on other pages and configure the load more button display
+//check for similar characters on other pages and set the load more button display
 function nextCharactersPage(data){
     if(data.info.next){
         more_btn.classList.add("display");
@@ -44,17 +51,18 @@ function characterInfo(data){
                 <div class="img-box">
                     <img src=${data.image} alt="Image of ${data.name}">
                 </div>
+                <h3 class="t-align-center">${data.name}</h3>
                 <div class="info-box">
-                    <p>Name: ${data.name}</p>
                     <p>Species: ${data.species}</p>
-                    <p>Status: <span class=${data.status}>${data.status}<span></p>
+                    <p>Status: <span class=${data.status}>${data.status == 'unknown' ? 'Unknown' : data.status}<span></p>
+                    <p>Gender: ${data.gender}</p>
                     <p>Location: ${data.location.name}</p>
                 </div>
             </div>`
     
     wrapper_cards.innerHTML = card;
 }
-
+//generate number for random search
 function generateNumber(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }

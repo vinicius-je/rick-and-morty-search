@@ -5,7 +5,8 @@
 }
 
 :root{
-    --black: #24282F
+    --black: #24282F;
+    --grenn: greenyellow;
 }
 
 html{
@@ -21,8 +22,12 @@ button{
     cursor: pointer;
 }
 
+.t-align-center{
+    text-align: center;
+}
+
 .container{
-    font-family: 'Lilita One', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 
 .main{
@@ -30,11 +35,11 @@ button{
     background-color: white;
     background-position: center;
     height: 260px;
-    text-align: center;
     padding-top: 10px;
 }
 
 .title{
+    font-family: 'Creepster', cursive;
     font-size: 2.8rem;
     color: var(--black);
 }
@@ -42,7 +47,6 @@ button{
 .input{
     width: 400px;
     height: 40px;
-    background-color: brown;
     display: flex;
     justify-content: space-between;
     border: 2px solid var(--black);
@@ -64,17 +68,13 @@ button{
     color: white;
 }
 
-.input button:hover{
-    color: orange;
-}
-
 .fa-search{
     font-size: 1rem;
 }
 
 .random-btn{
     background-color: var(--black);
-    font-family: 'Lilita One', cursive;
+    font-family: 'Creepster', cursive;
     color: white;
     font-size: 1.25rem;
     padding: 10px 0;
@@ -86,13 +86,8 @@ button{
     margin: auto;
 }
 
-.random-btn:hover{
-    color: orange;
-}
-
-section{
-    text-align: center;
-    padding-bottom: 50px;
+.random-btn:hover, .input button:hover{
+    color: var(--grenn);
 }
 
 .wrapper-cards{
@@ -101,50 +96,55 @@ section{
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 80%;
-    margin: auto;
-    margin-bottom: 50px;
+    margin: 0 auto 50px;
 }
 
 .card{
-    max-width: 290px;
+    max-width: 280px;
+    height: 400px;
     background-color: #3C3E44;
-    padding: 20px;
-    border-radius: 8px;
+    border-radius: 3px;
     margin-top: 50px;
-    text-align: left;
+    color: white;
+    overflow: hidden;
+}
+
+.card h3{
+    margin-top: 15px;
+    font-weight: bolder;
 }
 
 .img-box{
-    width: 100%;
-    height: 200px;
-    border-radius: 5px;
+    width: 280px;
+    height: 230px;
     overflow: hidden;
 }
 
 .img-box img{
     width: 100%;
     height: 100%;
+    transition: 0.2s;
+}
+
+.img-box img:hover{
+    transform: scale(1.1);
 }
 
 .info-box{
-    color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    text-align: left;
     display: flex;
     flex-direction: column;
     align-content: center;
-    margin-top: 20px;
+    padding: 10px 20px 0;
 }
 
-.info-box p{
-    font-weight: lighter;
-    color: rgb(223, 219, 219);
-}
 
 .more-btn{
-    font-family: 'Lilita One', cursive;
     font-size: 1rem;
     padding: 10px 0;
     width: 130px;
+    margin-bottom: 40px;
     border-radius: 3px;
     border: 2px solid white;
     color: white;
@@ -153,21 +153,21 @@ section{
 }
 
 .more-btn:hover{
-    color: orange;
-    border-color: orange;
+    color: var(--grenn);
+    border-color: var(--grenn);
 }
 
 .display{
     display: inline-block;
 }
 
-.live{
-    color: #01EC35;
+.Alive{
+    color: var(--grenn);
 }
-.dead{
-    color:  #FC1F1F;
+.Dead{
+    color:  #fc0f0f;
 }
-.unknow{
+.unknown{
     color: #9b9999;
 }
 
