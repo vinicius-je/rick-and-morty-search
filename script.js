@@ -10,6 +10,9 @@ let random_btn = document.querySelector(".random-btn");
 let more_btn = document.querySelector(".more-btn")
 let wrapper_cards = document.querySelector(".wrapper-cards");
 
+window.addEventListener('DOMContentLoaded', () => {
+    filterCharacters(URL_ID, '', arrayOfCharacters)
+})
 
 async function filterCharacters(url, type, callback){
     characters = await fetch(url + type)
