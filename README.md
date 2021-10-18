@@ -24,7 +24,7 @@ Realizar buscas conforme o nome do personagem inserido pelo usuário ou exibir u
 * Requisição de informações por meio de uma API
 * Arrays
 
-## O que eu aprendir com esse projeto:
+## O que eu aprendi com esse projeto:
 - [x] Usar funções assíncronas
 - [x] Usar o Fetch api
 - [x] Usar o Callback
