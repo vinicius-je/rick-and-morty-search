@@ -1,10 +1,12 @@
-<h1 align="center">Rick and Morty search</h1>
+<h1 align="center">Rick And Morty Search</h1>
+
+![image](https://user-images.githubusercontent.com/67986109/179328398-466a5d3f-55b9-4f90-802e-c5773c6834c7.png)
 
 ## Objetivo do projeto: 
-Realizar buscas conforme o nome do personagem inserido pelo usuário ou exibir um personagem aleatório atráves do botão destinado a tal função
+Realizar buscas conforme o nome do personagem ou exibir um personagem aleatório.
 
 ## Antevisão:
-![image](https://user-images.githubusercontent.com/67986109/136711815-29eca2a9-17c9-4613-b19b-2b382d5b0cee.png)
+![image](https://user-images.githubusercontent.com/67986109/179327841-c4a4639a-81ca-45cf-a6d8-c0ea34939a90.png)
 
 **Você pode acessar o projeto nesse link: [rick and morty search](https://vinicius-je.github.io/rick-and-morty-search/)**
 
@@ -18,19 +20,11 @@ Realizar buscas conforme o nome do personagem inserido pelo usuário ou exibir u
 
 ## Tópicos abordados:
 
-* Funções assíncronas (async/await)
-* Gerar números aleátorios entre dois números
-* Callback
-* Requisição de informações por meio de uma API
-* Arrays
-
-## O que eu aprendi com esse projeto:
-- [x] Usar funções assíncronas
-- [x] Usar o Fetch api
-- [x] Usar o Callback
-- [x] Consumir dados por meio de uma api
-- [x] Gerar valores aleatórios entre intervalos predefinidos
-
+- [x] Funções assíncronas (async/await)
+- [x] Requisição de informações por meio de uma API
+- [x] Números aleátorios
+- [x] Callback
+- [x] Arrays
 
 **Gostaria de agradecer ao [afuh](https://github.com/afuh/rick-and-morty-api-node), criador da [rick and morty api](https://rickandmortyapi.com/) utilizada nesse projeto**
 
