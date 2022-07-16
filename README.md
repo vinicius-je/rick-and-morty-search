@@ -1,5 +1,7 @@
 <h1 align="center">Rick And Morty Search</h1>
 
+![image](https://user-images.githubusercontent.com/67986109/179328398-466a5d3f-55b9-4f90-802e-c5773c6834c7.png)
+
 ## Objetivo do projeto: 
 Realizar buscas conforme o nome do personagem ou exibir um personagem aleatório.
 
