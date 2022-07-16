@@ -5,16 +5,18 @@ let card = "";
 let characters;
 let nextPage;
 
-let search_btn = document.querySelector(".search-btn");
-let random_btn = document.querySelector(".random-btn");
-let more_btn = document.querySelector(".more-btn")
-let wrapper_cards = document.querySelector(".wrapper-cards");
+let searchBTN = document.querySelector(".search-btn");
+let randomBTN = document.querySelector(".random-btn");
+let moreBTN = document.querySelector(".more-btn");
+let upBTN = document.querySelector(".up-btn");
+let backBTN = document.querySelector(".back-btn");
+let wrapperCards = document.querySelector(".wrapper-cards");
 
 window.addEventListener('DOMContentLoaded', () => {
     filterCharacters(URL_ID, '', arrayOfCharacters)
 })
 
-async function filterCharacters(url, type, callback){
+const filterCharacters = async (url, type, callback) => {
     characters = await fetch(url + type)
                 .then(res => res.json())
                 .catch(err => { console.log(err)})
@@ -22,34 +24,38 @@ async function filterCharacters(url, type, callback){
     if(characters.error == 'There is nothing here'){
         alert(characters.error)
     }else{
-        //check if user enter with a character name 
+        // Check if user enter with a character name 
         if(typeof(type) === "string"){
-            nextPage = nextCharactersPage(characters)
+            nextPage = nextCharactersPage(characters);
+            backBTN.classList.remove("display");
         }else{
-            more_btn.classList.remove("display");
+            moreBTN.classList.remove("display");
+            upBTN.classList.remove("display");
         }
         callback(characters);
     }
 }
 
-//check for similar characters on other pages and set the load more button display
-function nextCharactersPage(data){
+// Check for similar characters on other pages and set the load more button display
+const nextCharactersPage = (data) => {
     if(data.info.next){
-        more_btn.classList.add("display");
+        moreBTN.classList.add("display");
+        upBTN.classList.add("display");
         return characters.info.next;
     }else{
-        more_btn.classList.remove("display");
+        moreBTN.classList.remove("display");
+        upBTN.classList.remove("display");
         return null;
     }
 }
  
-function arrayOfCharacters(data){
+const arrayOfCharacters = (data) => {
     for(let character of data.results){
         characterInfo(character)
     }
 }
 
-function characterInfo(data){
+const characterInfo = (data) => {
     card += `<div class="card">
                 <div class="img-box">
                     <img src=${data.image} alt="Image of ${data.name}">
@@ -63,28 +69,39 @@ function characterInfo(data){
                 </div>
             </div>`
     
-    wrapper_cards.innerHTML = card;
-}
-//generate number for random search
-function generateNumber(min, max){
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    wrapperCards.innerHTML = card;
 }
 
-search_btn.addEventListener("click", ()=> {
+const searchCharacter = () => {
     let name = document.querySelector(".search-input").value;
     filterCharacters(URL_NAME, name, arrayOfCharacters);
     card = "";
     nextPage = "";
     document.querySelector(".search-input").value = "";
-})
+}
 
-random_btn.addEventListener("click", ()=> {
+// Generate number for random search
+const generateNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+searchBTN.addEventListener("click", searchCharacter);
+
+backBTN.addEventListener("click", searchCharacter);
+
+randomBTN.addEventListener("click", ()=> {
     let id_number = generateNumber(1, 671);
     filterCharacters(URL_ID, id_number, characterInfo);
+    backBTN.classList.add("display");
     card = "";
 })
 
-more_btn.addEventListener("click", () => {
+moreBTN.addEventListener("click", () => {
     filterCharacters(nextPage, "", arrayOfCharacters);
 })
+
+upBTN.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+})
+
 

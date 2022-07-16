@@ -22,7 +22,7 @@ button{
     cursor: pointer;
 }
 
-.t-align-center{
+.align-center{
     text-align: center;
 }
 
@@ -51,18 +51,17 @@ button{
     justify-content: space-between;
     border: 2px solid var(--black);
     border-radius: 5px;
-    overflow: hidden;
     margin: 20px auto;
 }
 
-.input input{
+.search-input{
     width: 90%;
     height: 100%;
     padding: 0 5px;
     font-size: 1rem;
 }
 
-.input button{
+.search-btn{
     width: 12%;
     background-color: var(--black);
     color: white;
@@ -95,27 +94,31 @@ button{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 80%;
+    width: 100%;
     margin: 0 auto 50px;
 }
 
 .card{
-    max-width: 280px;
-    height: 400px;
-    background-color: #3C3E44;
-    border-radius: 3px;
+    max-width: 300px;
+    height: 420px;
+    background-color: #33353c;
+    border-radius: 2px;
     margin-top: 50px;
-    color: white;
+    color: whitesmoke;
     overflow: hidden;
+    box-shadow: -4px 4px 4px rgba(22, 22, 22, 0.5);
 }
 
 .card h3{
     margin-top: 15px;
     font-weight: bolder;
+    font-family: 'Creepster', cursive;
+    font-weight: lighter;
+    font-size: 30px;
 }
 
 .img-box{
-    width: 280px;
+    width: 300px;
     height: 230px;
     overflow: hidden;
 }
@@ -139,8 +142,7 @@ button{
     padding: 10px 20px 0;
 }
 
-
-.more-btn{
+.header-btn-style{
     font-size: 1rem;
     padding: 10px 0;
     width: 130px;
@@ -150,9 +152,10 @@ button{
     color: white;
     background-color: var(--black);
     display: none;
+    text-transform: capitalize;
 }
 
-.more-btn:hover{
+.header-btn-style:hover{
     color: var(--grenn);
     border-color: var(--grenn);
 }
